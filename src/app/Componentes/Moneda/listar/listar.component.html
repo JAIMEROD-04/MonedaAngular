@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-header text-center">
+                <h3>LISTADO DE MONEDAS</h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table" border="1">
+                <thead>
+                    <tr class="text-center">
+                        <th>Cia</th>
+                        <th>clave Moneda</th>
+                        <th>descripcion</th>
+                        <th>simbolo</th>
+                        <th>abreviacion</th>
+                        <th>moneda Corriente</th>
+                        <th>status</th>
+                   
+                        <th>acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    @for (mon of moneda; track mon.numCia) {
+                        <tr class="text-center">
+                            <td>{{mon.numCia}}</td>
+                            <td>{{mon.claveMoneda}}</td>
+                            <td>{{mon.descripcion}}</td>
+                            <td>{{mon.simbolo}}</td>
+                            <td>{{mon.abreviacion}}</td>
+                            <td>{{mon.monedaCorriente}}</td>
+                            <td>{{mon.status}}</td>
+                           
+
+                            <td>
+                                <button class="btn btn-outline-dark" (click)="editar(mon)">editar</button>
+                                <button class="btn btn-outline-dark mx-2"  (click)="eliminar(mon)">eliminar</button>
+                            </td>
+                        </tr>
+                    }@empty {
+                        <td colspan="6" style="text-align: center;"></td>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
